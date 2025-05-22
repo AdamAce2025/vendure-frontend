@@ -1,10 +1,124 @@
-node_modules
+# ~/.gitignore for tikra-superfoods-frontend (Remix Storefront Starter)
 
-/.cache
-/build
-/public/build
+#---------------------------------------------------------------------------
+# NODE & DEPENDENCIES
+#---------------------------------------------------------------------------
+# Dependencies folder
+node_modules/
+
+# Yarn PnP (if you were to use it)
+.pnp
+.pnp.js
+
+# Yarn berry (if you were to use it - the starter uses classic Yarn with yarn.lock)
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+#---------------------------------------------------------------------------
+# REMIX & BUILD OUTPUTS
+#---------------------------------------------------------------------------
+# Remix build output for client-side assets
+public/build/
+
+# Remix server build output
+build/
+
+# Remix development cache
+.cache/
+
+# General build output directories (might be used by other tools)
+dist/
+out/
+
+# TypeScript specific build info
+*.tsbuildinfo
+
+#---------------------------------------------------------------------------
+# DEPLOYMENT & PLATFORM SPECIFIC
+#---------------------------------------------------------------------------
+# Netlify deployment folder
+.netlify/
+
+# Vercel deployment folder
+.vercel/
+
+# Cloudflare Pages / Wrangler build artifacts (wrangler.toml is tracked)
+.wrangler/
+# If wrangler outputs to a specific sub-folder like 'dist' inside .wrangler
+.wrangler/dist/
+
+#---------------------------------------------------------------------------
+# LOGS & REPORTS
+#---------------------------------------------------------------------------
+# Log files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log* # You are using yarn.lock
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Diagnostic reports (Node.js)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Test & Coverage artifacts
+coverage/
+.nyc_output/
+
+#---------------------------------------------------------------------------
+# ENVIRONMENT & CONFIGURATION
+#---------------------------------------------------------------------------
+# Environment variable files (NEVER commit files with secrets)
+# .env.template is tracked and should be committed as a template.
 .env
-/.idea
-/functions
-/.netlify
-/.wrangler
+.env.local
+.env.*.local
+# Example: .env.development, .env.production (if they contain secrets)
+# Keep .env.template tracked.
+
+#---------------------------------------------------------------------------
+# OPERATING SYSTEM & IDE
+#---------------------------------------------------------------------------
+# Operating System generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and Editors
+.idea/ # JetBrains IDEs
+.vscode/ # VSCode (unless you want to share specific launch/tasks configs not containing secrets)
+*.code-workspace # VSCode workspace settings
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw? # Vim swap files
+*~ # Backup files from some editors
+
+#---------------------------------------------------------------------------
+# MISCELLANEOUS / TEMPORARY
+#---------------------------------------------------------------------------
+# File list generated for .gitignore creation
+frontend_file_list.txt
+
+# Any other temporary files
+tmp/
+temp/
+
+#---------------------------------------------------------------------------
+# Husky (Specific files are handled by Husky's own .gitignore if needed)
+# Generally, .husky/ itself IS committed, but this starter already includes
+# .husky/_/.gitignore which correctly ignores everything in .husky/_/ except husky.sh
+# So, no general .husky/* ignore is needed here.
+#---------------------------------------------------------------------------
